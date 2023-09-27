@@ -1,0 +1,96 @@
+footer {
+  background-color: #262626;
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.ft-logo a {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 900;
+  display: inline-block;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+.ft-logo a:hover {
+  color: #ec3333;
+}
+.company-social-links ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+.company-social-links ul li a {
+  color: #ff8a00;
+  transition: all 0.3s ease;
+}
+.company-social-links ul li a:hover {
+  color: #ec3333;
+}
+
+.footer-info h3 {
+  color: #fff;
+  font-size: 25px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.footer-info h3::before {
+  content: " ";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  height: 2px;
+  width: 65%;
+  background: #ec3333;
+}
+.news h3::before {
+  display: none;
+}
+.footer-info ul li {
+  margin-bottom: 15px;
+}
+.footer-info ul li a {
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+.footer-info ul li a:hover {
+  color: #ff8a00;
+}
+.footer-info .days {
+  color: #fff;
+  font-size: 18px;
+}
+.footer-info .timings {
+  color: #ff8a00;
+}
+.subscribe {
+  position: relative;
+}
+.subscribe-email {
+  padding: 20px 0 5px;
+  width: 100%;
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #555454;
+  font-size: 17;
+}
+.subscribe-email:focus {
+  outline: none;
+  border-bottom: 1px solid #ec3333;
+}
+.btn-subscribe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 98%;
+  width: 100px;
+  border: none;
+  background: #262626;
+  color: #ff8a00;
+  font-size: 18px;
+  font-weight: 600;
+}

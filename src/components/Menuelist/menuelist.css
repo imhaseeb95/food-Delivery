@@ -1,0 +1,35 @@
+/* .hm-productlist-container {
+  border: 1px solid #bbb;
+  padding: 20px;
+  border-radius: 10px;
+}
+.hm-productlist-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.hm-productlist-title {
+  margin: 15px 0;
+}
+.hm-productlist-disc {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.hm-productlist-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-link {
+  background: #ec3333;
+  border: none;
+  color: #fff;
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}*/

@@ -1,0 +1,8 @@
+.userscard-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  padding: 5px 5px;
+  border: 1px solid #ebebeb;
+  margin-bottom: 5px;
+}

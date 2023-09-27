@@ -1,0 +1,115 @@
+.header {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(6, 6, 6, 0.3);
+}
+.header-container {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0 15px; */
+}
+.logo {
+  font-size: 35px;
+  font-weight: 900;
+  color: #ec3333;
+  font-style: italic;
+}
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+nav ul li:last-child {
+  margin-right: 0;
+}
+nav ul li a {
+  color: #eb7d46;
+  padding: 19px 0;
+}
+nav ul li a:hover {
+  color: #ee9d75;
+}
+.cart-icon {
+  position: relative;
+}
+.cart-number {
+  position: absolute;
+  top: -11px;
+  right: -11px;
+  height: 15px;
+  width: 15px;
+  background-color: #ec3333;
+  color: #fff;
+  text-align: center;
+  line-height: 15px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+.cart-icon svg {
+  font-size: 25px;
+  color: #ec3333;
+  transition: all 0.3s ease;
+}
+.cart-icon svg:hover {
+  color: #262626;
+}
+
+.user-icon svg {
+  font-size: 45px;
+  color: #ec3333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.user-icon svg:hover {
+  color: #262626;
+}
+.user-box:hover .user-icon {
+  border: 1px solid #ee9d75;
+}
+.user-icon {
+  position: relative;
+}
+.user-info {
+  position: absolute;
+  top: 54px;
+  right: -13px;
+  height: auto;
+  width: 115px;
+  background: #fff;
+  padding: 10px 0 10px 10px;
+  box-shadow: 0 0 10px rgba(6, 6, 6, 0.3);
+}
+
+.login {
+  cursor: pointer;
+}
+.user-info a {
+  display: block;
+  color: #000;
+}
+.user-info a:hover,
+.user-info div.login:hover {
+  color: #ee9d75;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+nav ul li:last-child {
+  margin-right: 0;
+}
+nav ul li a {
+  color: #eb7d46;
+  padding: 19px 0;
+}
+nav ul li a:hover {
+  color: #ee9d75;
+}

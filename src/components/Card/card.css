@@ -1,0 +1,21 @@
+.product-cards {
+  border: 1px solid #d1cfcf;
+  padding: 15px;
+  border-radius: 10px;
+}
+.product-cards-image {
+  margin-bottom: 5px;
+}
+
+.btn-details {
+  color: #262626;
+  font-size: 18px;
+  display: inline-block;
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  /* background-color: aliceblue; */
+}
+.product-cards-rating {
+  margin-bottom: 10px;
+}
