@@ -1,12 +1,9 @@
-import products from "../../products";
 import Card from "../../components/Card/Card";
 import "./user.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 const User = () => {
-  const [next] = useState(products);
-  console.log(next);
   const [data, setData] = useState([]);
   useEffect(() => {
     // fetch("http://localhost:8080/product/all-products")

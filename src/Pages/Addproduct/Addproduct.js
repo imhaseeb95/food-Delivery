@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Addproductcard from "../../components/Productcard/Addproductcard";
 import "./addproduct.css";
 
 function Addproduct() {
@@ -31,7 +32,9 @@ function Addproduct() {
             </ul>
           </div>
         </div>
-        <div className="admin-content-container">ASASSSADSADSA</div>
+        <div className="admin-content-container">
+          <Addproductcard />
+        </div>
       </div>
     </>
   );

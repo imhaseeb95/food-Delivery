@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
+import Addcategorycard from "../../components/Addcategorycard/Addcategorycard";
 import "./addcategory.css";
-import { AiFillHome } from "react-icons/ai";
+import Listcategory from "../../components/Listategory/Listcategory";
+import { useState } from "react";
 
 function Addcategory() {
+  const [edit, setEdit] = useState("");
+  function getData(proid, items) {
+    setEdit({ id: proid, item: items, edit: true });
+  }
+
   return (
     <>
       <div className="addcategory-container main-dash">
@@ -33,9 +40,8 @@ function Addcategory() {
           </div>
         </div>
         <div className="admin-content-container">
-          <Link to="/dashboard">
-            <AiFillHome />
-          </Link>
+          <Addcategorycard edit={edit} />
+          <Listcategory getData={getData} />
         </div>
       </div>
     </>

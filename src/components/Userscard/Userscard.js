@@ -35,44 +35,46 @@ function Userscard() {
       <div>
         {users.map((items) => {
           return (
-            // <table>
-            //   <tr>
-            //     <td>
-            //       <span>{items.firstName}</span>
-            //       <span>{items.lastName}</span>
-            //     </td>
-            //     <td>
-            //       <strong>{items.role}</strong>
-            //     </td>
-            //     <td>
-            //       <strong>{items.email}</strong>
-            //     </td>
-            //     <td>
-            //       <strong>{items.contact}</strong>
-            //     </td>
-            //     <td>
-            //       <RiDeleteBin6Line onClick={() => handleDelete(items._id)} />
-            //     </td>
-            //   </tr>
-            // </table>
-            <div key={items._id} className="userscard-container">
-              <div className="user-name">
-                <span>{items.firstName}</span>&nbsp;
-                <span>{items.lastName}</span>
-              </div>
-              <div className="role">
-                <strong>{items.role}</strong>
-              </div>
-              <div className="user-email">
-                <strong>{items.email}</strong>
-              </div>
-              <div className="user-conatact">
-                <strong>{items.contact}</strong>
-              </div>
-              <div className="user-delete">
-                <RiDeleteBin6Line onClick={() => handleDelete(items._id)} />
-              </div>
-            </div>
+            <table key={items._id} style={{ width: "100%" }}>
+              <tr>
+                <td>
+                  <tr>
+                    <td>{items.firstName}</td>&nbsp;
+                    <td>{items.lastName}</td>
+                  </tr>
+                </td>
+                <td>
+                  <strong>{items.role}</strong>
+                </td>
+                <td>
+                  <strong>{items.email}</strong>
+                </td>
+                <td>
+                  <strong>{items.contact}</strong>
+                </td>
+                <td>
+                  <RiDeleteBin6Line onClick={() => handleDelete(items._id)} />
+                </td>
+              </tr>
+            </table>
+            // <div key={items._id} className="userscard-container">
+            //   <div className="user-name">
+            //     <span>{items.firstName}</span>&nbsp;
+            //     <span>{items.lastName}</span>
+            //   </div>
+            //   <div className="role">
+            //     <strong>{items.role}</strong>
+            //   </div>
+            //   <div className="user-email">
+            //     <strong>{items.email}</strong>
+            //   </div>
+            //   <div className="user-conatact">
+            //     <strong>{items.contact}</strong>
+            //   </div>
+            //   <div className="user-delete">
+            //     <RiDeleteBin6Line onClick={() => handleDelete(items._id)} />
+            //   </div>
+            // </div>
           );
         })}
       </div>
