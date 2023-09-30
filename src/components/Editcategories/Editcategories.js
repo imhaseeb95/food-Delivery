@@ -1,30 +1,45 @@
 import axios from "axios";
-import React, { useState } from "react";
-import { AiFillHome } from "react-icons/ai";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function Addcategorycard() {
+function Editcategories({ edit, setIsActive }) {
   const [category, setCategory] = useState({
     name: "",
     desc: "",
   });
 
+  useEffect(() => {
+    if (edit?.edit === true) {
+      setCategory({
+        name: edit?.item?.name,
+        desc: edit?.item?.desc,
+      });
+    } else {
+      setCategory({
+        name: "",
+        desc: "",
+      });
+    }
+  }, [edit?.edit, edit?.item?.desc, edit?.item?.name]);
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setCategory((prev) => {
       return { ...prev, [name]: value };
     });
   };
+
+  const { id } = edit;
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8080/category/create", category)
+      .patch(`http://localhost:8080/category/updatecategory/${id}`, category)
       .then((res) => {
-        if (res.status === 201) {
+        if (res.status === 200) {
           setCategory({
             name: "",
             desc: "",
           });
+          setIsActive(false);
         }
       })
       .catch((err) => console.log(err));
@@ -32,9 +47,7 @@ function Addcategorycard() {
   return (
     <>
       <div className="prouct-form">
-        <Link to="/dashboard">
-          <AiFillHome />
-        </Link>
+        <Link to="/addcategory">Add category</Link>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label className="labels">Ctegory Name</label>
@@ -56,7 +69,7 @@ function Addcategorycard() {
               onChange={handleOnChange}
             />
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit">Save Changes</button>
           <br />
           <br />
 
@@ -69,4 +82,4 @@ function Addcategorycard() {
   );
 }
 
-export default Addcategorycard;
+export default Editcategories;

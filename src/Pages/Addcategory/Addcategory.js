@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
 import Addcategorycard from "../../components/Addcategorycard/Addcategorycard";
 import "./addcategory.css";
 import Listcategory from "../../components/Listategory/Listcategory";
 import { useState } from "react";
+import Editcategories from "../../components/Editcategories/Editcategories";
+import Dashboardlinks from "../../components/Dashboardlinks/Dashboardlinks";
 
 function Addcategory() {
+  const [isActive, setIsActive] = useState(false);
+
   const [edit, setEdit] = useState("");
   function getData(proid, items) {
     setEdit({ id: proid, item: items, edit: true });
@@ -14,34 +17,16 @@ function Addcategory() {
     <>
       <div className="addcategory-container main-dash">
         <div className="admin-side-bar">
-          <div className="admin-link">
-            <ul>
-              <li>
-                <Link to="/dashboard" className="">
-                  Dashboard
-                </Link>
-              </li>
-              <li>
-                <Link to="/orders" className="">
-                  Order
-                </Link>
-              </li>
-              <li>
-                <Link to="/addproduct" className="">
-                  Add Product
-                </Link>
-              </li>
-              <li>
-                <Link to="/addcategory" className="">
-                  Add Category
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <Dashboardlinks />
         </div>
         <div className="admin-content-container">
-          <Addcategorycard edit={edit} />
-          <Listcategory getData={getData} />
+          {isActive ? (
+            <Editcategories setIsActive={setIsActive} edit={edit} />
+          ) : (
+            <Addcategorycard />
+          )}
+
+          <Listcategory setIsActive={setIsActive} getData={getData} />
         </div>
       </div>
     </>

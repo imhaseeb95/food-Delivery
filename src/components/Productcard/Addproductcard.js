@@ -31,17 +31,32 @@ function Addproduct() {
     });
   };
   const handleSubmit = (e) => {
+    // console.log("HI");
     e.preventDefault();
     axios
       .post("http://localhost:8080/product/create-product", productData)
-      .then((res) => console.log(res.status))
+      .then((res) => {
+        if (res.status === 201) {
+          setProductData({
+            name: "",
+            image: "",
+            brand: "",
+            desc: "",
+            reviews: "",
+            rating: "",
+            price: "",
+            category_id: "",
+            countInStock: "",
+          });
+        }
+      })
       .catch((err) => console.error(err));
   };
-  console.log(productData);
+  // console.log(productData);
   return (
     <>
       <div className="prouct-form">
-        <form onSubmit={handleSubmit}>
+        <form>
           <div className="form-group">
             <select
               name="category_id"
@@ -72,7 +87,7 @@ function Addproduct() {
               type="text"
               className="form-image"
               name="image"
-              value={productData.imgae}
+              value={productData.image}
               onChange={handleOnChange}
             />
           </div>
@@ -136,7 +151,15 @@ function Addproduct() {
               onChange={handleOnChange}
             />
           </div>
-          <button type="submit">Submit</button>
+          <button type="button" onClick={handleSubmit}>
+            Submit
+          </button>
+          <br />
+          <br />
+
+          <hr />
+          <br />
+          <br />
         </form>
       </div>
     </>

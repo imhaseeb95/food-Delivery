@@ -3,7 +3,7 @@ import "./listcategory.css";
 import axios from "axios";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
-function Listcategory({ getData }) {
+function Listcategory({ getData, setIsActive }) {
   const [listCategory, setListCategory] = useState([]);
   useEffect(() => {
     axios
@@ -19,15 +19,8 @@ function Listcategory({ getData }) {
       .catch((err) => console.log(err));
   };
   const handleEdit = (id, items) => {
-    axios
-      .patch(`http://localhost:8080/category/updatecategory/${id}`)
-      .then((res) => {
-        console.log(res.data);
-        if (res.status === 200) {
-          getData(id, items);
-        }
-      })
-      .catch((err) => console.log(err));
+    getData(id, items);
+    setIsActive(true);
   };
 
   return (
@@ -44,11 +37,7 @@ function Listcategory({ getData }) {
           <tbody>
             {listCategory?.map((items) => (
               <tr key={items._id}>
-                <td>
-                  {items.name}
-                  <br />
-                  {items._id}
-                </td>
+                <td>{items.name}</td>
                 <td>{items.desc}</td>
                 <td>
                   <RiDeleteBin6Line

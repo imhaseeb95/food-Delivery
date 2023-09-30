@@ -21,6 +21,7 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import Orders from "./Pages/Oredrs/Orders";
 import Addproduct from "./Pages/Addproduct/Addproduct";
 import Addcategory from "./Pages/Addcategory/Addcategory";
+import Productlistitems from "./components/Productlistitems/Productlistitems";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -39,11 +40,10 @@ const router = createBrowserRouter(
       <Route path="/orders" element={<Orders />} />
       <Route path="/addproduct" element={<Addproduct />} />
       <Route path="/addcategory" element={<Addcategory />} />
+      <Route path="/productlist" element={<Productlistitems />} />
     </Route>
   )
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={router} />);
-
-

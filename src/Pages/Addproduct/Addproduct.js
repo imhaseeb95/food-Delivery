@@ -1,39 +1,18 @@
-import { Link } from "react-router-dom";
 import Addproductcard from "../../components/Productcard/Addproductcard";
 import "./addproduct.css";
+import Dashboardlinks from "../../components/Dashboardlinks/Dashboardlinks";
+import EditProductData from "../../components/EditProductData/EditProductData";
 
 function Addproduct() {
   return (
     <>
       <div className="addproduct-container main-dash">
         <div className="admin-side-bar">
-          <div className="admin-link">
-            <ul>
-              <li>
-                <Link to="/dashboard" className="">
-                  Dashboard
-                </Link>
-              </li>
-              <li>
-                <Link to="/orders" className="">
-                  Order
-                </Link>
-              </li>
-              <li>
-                <Link to="/addproduct" className="">
-                  Add Product
-                </Link>
-              </li>
-              <li>
-                <Link to="/addcategory" className="">
-                  Add Category
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <Dashboardlinks />
         </div>
         <div className="admin-content-container">
           <Addproductcard />
+          <EditProductData />
         </div>
       </div>
     </>

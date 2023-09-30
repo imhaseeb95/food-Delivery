@@ -15,7 +15,7 @@ const User = () => {
       .then((res) => setData(res.data.result))
       .catch((err) => console.error(err));
   }, [data]);
-
+  // console.log(data);
   return (
     <>
       <section className="padding-products-detail">
